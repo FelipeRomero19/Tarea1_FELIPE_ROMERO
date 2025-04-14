@@ -19,37 +19,52 @@ Este programa simula un sistema básico de atención técnica. Permite registrar
    ```bash
    $OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
    ```
-
-5. Ahora ejecuta:
+4. Ahora ejecuta:
    ```bash
    ./tarea1
    ```
-6. Ahora estarás viendo el menú del programa, decide que opción usar
-
----
+5. Ahora estarás viendo el menú del programa, decide que opción usar
 
 ## ¿Cómo se usa?
-
+---
 ### 1. Registrar ticket
 
-Pide número de ticket y una descripción. Se crea con prioridad baja.
+Ingresa el número de ticket y una descripción. El programa asigna automáticamente la prioridad como "Baja"
 
 **Ejemplo:**
 ```
-Ingrese número de ticket: 123456789
-Descripción del problema: No prende el computador
+Por favor ingrese el número de su ticket:
+123456789
 ```
+Una vez ingresado un ID válido(no repetido y que sean solo números) el programa te pedirá una descripción breve del problema
+**Ejemplo:**
+```
+Por favor ingrese una breve descripción de su problema (máx. 200 caracteres, mín. 1 caracter):
+Se cayó mi computador al agua
+```
+Seguido de esto el programa te pedirá apretar un botón y te mostrará los datos ingresados junto a la hora en la que se ingresó el ticket
+**Ejemplo:**
+```
+Ticket creado como ID: 123456789
+Descripción: Por favor ingrese una breve descripción de su problema (máx. 200 caracteres, mín. 1 caracter):
+Se cayó mi computador al agua
+Prioridad: Baja
+Fecha y Hora: 23:51:12
 
+¡Su ticket ha sido registrado con éxito!
+Presione una tecla para continuar...
+```
 ---
-
 ### 2. Cambiar prioridad
 
-Permite cambiar la prioridad de un ticket existente.
+Permite cambiar la prioridad de un ticket existente. La prioridad puede estar escrita de cualquier manera, sin importar mayúsculas o minúsculas, solo importa que sea "Alta", "Media" o "Baja".
 
 **Ejemplo:**
 ```
-Ingrese el ticket: 123456789
-Ingrese la nueva prioridad: alta
+Ingrese el ticket al cual desea cambiar su prioridad
+2
+Ingrese la nueva prioridad:
+alta
 ```
 
 ---
