@@ -71,7 +71,7 @@ alta
 
 ### 3. Ver tickets pendientes
 
-Muestra los tickets en orden de prioridad y hora de llegada.
+Muestra los tickets en orden de prioridad y hora de llegada. Priorizando y poniendo primero en la lista las prioridades más altas y luego ordenando por hora, priorizando la hora más antigua
 
 **Ejemplo de salida:**
 ```
@@ -79,36 +79,45 @@ ID: 123456789
 Descripción: No prende el computador
 Prioridad: Alta
 Hora de ingreso: 16:42:10
+
+ID: 3456
+Descripción: No prende mi celular
+Prioridad: Baja
+Hora de ingreso: 17:42:10
 ```
 
 ---
 
 ### 4. Atender ticket
 
-Atiende al cliente con mayor prioridad (o más antiguo si hay empate).
+Atiende al cliente con mayor prioridad (o más antiguo si hay prioridades iguales). Luego lo elimina de la lista
 
 **Ejemplo de salida:**
 ```
-Atendiendo ticket:
-ID: 123456789
-Descripción: No prende el computador
-Prioridad: Alta
+Inicio del procesamiento de ticket
+ID del Ticket: 123456789
+Descripción del problema: No prende el computador
+Prioridad actual del Ticket: Alta
+Hora de ingreso del Ticket: 16:42:10
+
+El ticket ha sido procesado con éxito y ha sido eliminado de la lista
+Presione una tecla para continuar...
 ```
 
 ---
 
 ### 5. Buscar ticket por ID
 
-Busca un ticket y muestra su información.
+Busca un ticket y muestra su información. Si el ID ingresado no es válido mostrará un mensaje, si el ID no ha sido ingresado mostrará un mensaje y si la lista no tiene ningún ticket también lo mostrará
 
 **Ejemplo:**
 ```
-Ingrese ID del ticket: 1234567
-Ticket encontrado:
-ID: 123456789
-Descripción: No prende el computador
-Prioridad: Alta
-Hora: 16:42:10
+Por favor ingrese el ID del ticket que desea buscar
+123
+ID del Ticket: 123
+Descripción del problema: Se cayó mi celular
+Prioridad actual del Ticket: Baja
+Hora de ingreso del Ticket: 21:51:12
 ```
 
 ---
