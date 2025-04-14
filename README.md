@@ -6,25 +6,25 @@ Este programa simula un sistema básico de atención técnica. Permite registrar
 
 ## Compilación y ejecución
 
-1. Clona el repositorio:
+1. Clona el repositorio de github:
    ```bash
    https://github.com/FelipeRomero19/Tarea_1_Felipe_Romero.git
    ```
-
 2. Compila el programa:
+   Abre una terminal nueva en VisualStudioCode y ejecuta el siguiente comando:
    ```bash
    gcc -o tarea1 tarea1.c tdas/list.c tdas/extra.c
    ```
+3. Para ver bien las instrucciones al ejecutar el programa usa:
+   ```bash
+   $OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
+   ```
 
-3. Ejecuta:
+5. Ahora ejecuta:
    ```bash
    ./tarea1
    ```
-
-*Si usas PowerShell y los acentos no se ven bien:*
-```bash
-$OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
-```
+6. Ahora estarás viendo el menú del programa, decide que opción usar
 
 ---
 
