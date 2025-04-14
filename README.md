@@ -1,33 +1,118 @@
-En este *repl* puedes encontrar varios ejemplos que te pueden ayudar con las tareas de estructura.
+# Tarea 1: Sistema de Tickets 
 
-## Código de Ejemplo (tarea1)
-Para ejecutar el ejemplo tarea1 primero debemos compilar (en la carpeta raíz)
-````
-gcc tdas/*.c tarea1.c -Wno-unused-result -o tarea1
-````
+Este programa simula un sistema básico de atención técnica. Permite registrar, buscar y atender tickets con distintas prioridades.
 
-Y luego ejecutar:
-````
-./tarea1
-````
+---
 
-## TDAs
-En la carpeta `tdas` se encuentran implementados distintos TDAs que puedes utilizar (lista, pila, cola, cola con prioridad y mapas). 
+## Compilación y ejecución
 
-Las implementaciones no son las más eficientes (todas usan como estructura de datos una **lista enlazada**), por lo que puedes reemplazarlas por las que has realizado en los labs.
+1. Clona el repositorio:
+   ```bash
+   https://github.com/FelipeRomero19/Tarea_1_Felipe_Romero.git
+   ```
 
-## Otros códigos (en carpeta examples)
-Para ejecutar los distintos ejemplos que hay en la carpeta `examples`, primero debes compilarlos. Si estamos en la carpeta raíz:
-````
-gcc tdas/*.c examples/example2_menu.c -Wno-unused-result -o example
-````
-Y luego ejecutarlos:
-````
-./example
-````
+2. Compila el programa:
+   ```bash
+   gcc -o tarea1 tarea1.c tdas/list.c tdas/extra.c
+   ```
 
-Se incluyen los siguientes ejemplos:
-* `example1_list`: Uso del TDA Lista, inserción y eliminación de elementos.
-* `example2_menu`: Ejemplo de menú con submenús.
-* `example3_readcsv`: Ejemplo de lectura desde un archivo csv y almacenamiento en datos estructurados.
-* `example4_map`: Ejemplo de uso del TDA mapa.
+3. Ejecuta:
+   ```bash
+   ./tarea1
+   ```
+
+*Si usas PowerShell y los acentos no se ven bien:*
+```bash
+$OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
+```
+
+---
+
+## ¿Cómo se usa?
+
+### 1. Registrar ticket
+
+Pide número de ticket y una descripción. Se crea con prioridad baja.
+
+**Ejemplo:**
+```
+Ingrese número de ticket: 123456789
+Descripción del problema: No prende el computador
+```
+
+---
+
+### 2. Cambiar prioridad
+
+Permite cambiar la prioridad de un ticket existente.
+
+**Ejemplo:**
+```
+Ingrese el ticket: 123456789
+Ingrese la nueva prioridad: alta
+```
+
+---
+
+### 3. Ver tickets pendientes
+
+Muestra los tickets en orden de prioridad y hora de llegada.
+
+**Ejemplo de salida:**
+```
+ID: 123456789
+Descripción: No prende el computador
+Prioridad: Alta
+Hora de ingreso: 16:42:10
+```
+
+---
+
+### 4. Atender ticket
+
+Atiende al cliente con mayor prioridad (o más antiguo si hay empate).
+
+**Ejemplo de salida:**
+```
+Atendiendo ticket:
+ID: 123456789
+Descripción: No prende el computador
+Prioridad: Alta
+```
+
+---
+
+### 5. Buscar ticket por ID
+
+Busca un ticket y muestra su información.
+
+**Ejemplo:**
+```
+Ingrese ID del ticket: 1234567
+Ticket encontrado:
+ID: 123456789
+Descripción: No prende el computador
+Prioridad: Alta
+Hora: 16:42:10
+```
+
+---
+
+### 6. Salir
+
+Finaliza el programa.
+
+**Salida:**
+```
+Cerrando sistema de tickets.
+```
+
+---
+
+## Reglas
+
+- El ID debe tener solo números (máximo 10 caracteres).
+- Prioridades válidas: alta, media y baja (sin importar mayúsculas).
+- Los tickets se ordenan automáticamente por prioridad y hora de ingreso.
+
+---
